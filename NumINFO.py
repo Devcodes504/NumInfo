@@ -1,0 +1,56 @@
+import requests
+import os
+from colorama import Fore, Style,init
+import time
+banner = fr"""{Fore.GREEN} 
+    _   __                _____   ____________ 
+   / | / /_  ______ ___  /  _/ | / / ____/ __ \
+  /  |/ / / / / __ `__ \ / //  |/ / /_  / / / /
+ / /|  / /_/ / / / / / // // /|  / __/ / /_/ / 
+/_/ |_/\__,_/_/ /_/ /_/___/_/ |_/_/    \____/  
+                                             {Style.RESET_ALL}  """
+
+
+
+
+
+
+def info():
+    api = "2f6ba60a20ffe47f3d04f8ac4f465d9b"
+    url = "http://apilayer.net/api/validate"
+    params = {
+    "access_key": api,
+    "number": numero
+}
+    respuesta = requests.get(url, params=params)
+    data = respuesta.json()
+    if data.get("valid"):
+             time.sleep(1.0)
+             print(f"{Fore.RED}------------ Info -------------------------------------{Style.RESET_ALL}")
+             print(f"{Fore.GREEN}\nvalido:{Style.RESET_ALL} {Fore.CYAN}si{Style.RESET_ALL}")
+             print(f"{Fore.GREEN}numero:{Style.RESET_ALL} {Fore.CYAN}{data['international_format']}{Style.RESET_ALL}")
+             
+             print(f"{Fore.GREEN}pais:{Style.RESET_ALL} {Fore.CYAN}{data['country_name']}{Style.RESET_ALL}")
+             
+             print(f"{Fore.GREEN}operador:{Style.RESET_ALL} {Fore.CYAN}{data['carrier']}{Style.RESET_ALL}")
+             print(f"\n{Fore.RED}-------------------------------------------------------{Style.RESET_ALL}")
+    else:
+      print("Error:", data.get("Error"))
+
+def salir():
+      exit()
+      
+      
+while True:
+    print(banner)
+    print(f"{Fore.GREEN}[1]{Style.RESET_ALL} {Fore.CYAN}Numero info{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}[2]{Style.RESET_ALL} {Fore.CYAN}salir{Style.RESET_ALL}")
+    opciones = int(input(f"\n{Fore.GREEN}[+]{Style.RESET_ALL} {Fore.YELLOW}ingrese una opcion: {Style.RESET_ALL}"))
+    if opciones == 1:
+      numero = input(f"\n{Fore.GREEN}[+]{Style.RESET_ALL}{Fore.YELLOW} ingrese el numero sin espacios: {Style.RESET_ALL}")
+      info()
+    elif opciones == 2:
+        salir()
+    
+    
+        
