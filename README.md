@@ -12,9 +12,10 @@ python NumINFO.py
 ```
 
 ## Instalación en Linux
-
+```bash
 sudo apt update && sudo apt upgrade
 sudo apt install python3 git
 git clone https://github.com/Devcodes504/NumInfo.git
 cd NumInfo
 python3 NumINFO.py
+```
