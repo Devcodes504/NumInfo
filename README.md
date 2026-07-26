@@ -9,7 +9,7 @@ pkg install python git
 git clone https://github.com/Devcodes504/NumInfo.git
 cd NumInfo
 python NumINFO.py
-
+```
 
 ## Instalación en Linux
 
