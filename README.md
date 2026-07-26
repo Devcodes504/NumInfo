@@ -7,5 +7,5 @@ Herramienta en Python para obtener información de un número. | ©By NEXUS
 pkg update && pkg upgrade
 pkg install python git
 git clone https://github.com/Devcodes504/NumInfo.git
-cd NumINFO
-python NumINFO.py
+cd NumInfo
+python NumInfo.py
