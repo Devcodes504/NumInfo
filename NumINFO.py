@@ -1,7 +1,9 @@
 import requests
 import os
 from colorama import Fore, Style,init
+import sys
 import time
+os.system("clear")
 banner = fr"""{Fore.GREEN} 
     _   __                _____   ____________ 
    / | / /_  ______ ___  /  _/ | / / ____/ __ \
